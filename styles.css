@@ -26,8 +26,8 @@ header {
 
 .header-content {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
-  justify-content: space-between;
   gap: 20px;
 }
 
@@ -88,7 +88,7 @@ header {
   font-size: 0.9em;
   transition: background 0.3s ease;
   text-align: center;
-  width: 120px; /* Fixed width for all buttons */
+  width: 120px;
 }
 
 .btn-social:hover, .btn-download:hover {
@@ -97,14 +97,14 @@ header {
 
 nav {
   margin-top: 10px;
-  background: #444; /* Darker background for nav bar */
+  background: #444;
   padding: 10px 0;
   border-radius: 5px;
 }
 
 nav ul {
   display: flex;
-  justify-content: space-around; /* Evenly spaced navigation buttons */
+  justify-content: space-around;
   list-style: none;
   padding: 0;
   margin: 0;
@@ -120,7 +120,7 @@ nav ul li a {
   font-size: 0.9em;
   transition: background 0.3s ease;
   text-align: center;
-  width: 100%; /* Ensure buttons take full width */
+  width: 100%;
 }
 
 nav ul li a:hover {
@@ -129,7 +129,7 @@ nav ul li a:hover {
 
 section {
   padding: 20px 0;
-  scroll-margin-top: 120px; /* Ensure sections are visible below the sticky header */
+  scroll-margin-top: 120px;
 }
 
 h2 {
@@ -170,4 +170,44 @@ footer {
 
 footer p {
   margin: 0;
+}
+
+
+@media (max-width: 768px) {
+  .header-content {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+  }
+
+  .profile-photo img {
+      width: 80px;
+      height: 80px;
+  }
+
+  .profile-info h1 {
+      font-size: 1.5em;
+  }
+
+  .contact-info p {
+      font-size: 0.8em;
+  }
+
+  .action-buttons {
+      align-items: center;
+      margin-top: 10px;
+  }
+
+  .btn-social, .btn-download {
+      width: 100%;
+  }
+
+  nav ul {
+      flex-direction: column;
+      gap: 10px;
+  }
+
+  nav ul li a {
+      width: 100%;
+  }
 }
